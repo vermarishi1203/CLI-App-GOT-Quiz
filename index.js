@@ -56,19 +56,15 @@ const arrayOfQuestions = [
     }
 ];
 
-for (let i = 0; i < arrayOfQuestions.length ; i++ ) {
-    
-    questionPopper( arrayOfQuestions[i] );
-
-};
+for (let i = 0; i < arrayOfQuestions.length ; i++ ) questionPopper( arrayOfQuestions[i] );
 
 function questionPopper ({ question, answer, difficulty }) {
 
     console.log(`Difficulty: ${difficulty}`);
 
     const userAnswer = prompt(question);
-    
-    const isAnswerCorrect = answer.some( item => item.trim().toUpperCase() === userAnswer.trim().toUpperCase());
+
+    const isAnswerCorrect = answer.some( currentAnswer => currentAnswer.trim().toUpperCase() === userAnswer.trim().toUpperCase());
 
     if ( isAnswerCorrect ) {
         
@@ -99,7 +95,7 @@ function questionPopper ({ question, answer, difficulty }) {
         
         console.log("Sorry, wrong answer.");
 
-        console.log(`The correct answer is: ${answer[1]}`);
+        console.log(`The correct answer is: ${answer[0]}`);
 
         console.log(`Your current score is: ${currentScore}`);
     }
