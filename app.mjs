@@ -1,10 +1,13 @@
 "use strict";
 
-const prompt = require("prompt-sync")({sigint: true});
+import chalk from "chalk";
+import promptSync from "prompt-sync";
+
+const prompt = promptSync({sigint: true});
 
 console.log("\n");
 
-const userName = prompt("Hey GOT fan, What's your name? ");
+const userName = prompt(chalk.blue("Hey GOT fan, What's your name? "));
 
 console.log(`Welcome to the quiz ${userName}!`);
 
