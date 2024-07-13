@@ -15,60 +15,44 @@ let currentScore = 0;
 const arrayOfQuestions = [
     {
         question: "Who is the youngest of Ned Stark\’s children? ",
-        answer: "Rickon Stark",
+        answer: ["Rickon Stark", "Rickon"],
         difficulty: "Medium"
     },{
         question: "Which noble character joins the band of assassins called \"Faceless Men\" in Braavos? ",
-        answer: "Arya Stark",
+        answer: ["Arya Stark", "Arya"],
         difficulty: "Easy"
     },{
         question: "Who had the nickname \"The Onion Knight\"? ",
-        answer: "Davos Seaworth",
+        answer: ["Davos Seaworth", "Ser Davos Seaworth", "Sir Davos Seaworth", "Ser Davos", "Sir Davos", "Davos"],
         difficulty: "Medium"
     },{
         question: "Which former ranger of the Night\’s Watch led an army of wildlings as the \“King-Beyond-the-Wall\”? ",
-        answer: "Mance Rayder",
+        answer: ["Mance Rayder", "Mance Raider", "Manse Rayder", "Manse Raider", "Mance", "Manse"],
         difficulty: "Medium"
     },{
         question: "What are the \“house words\” of House Stark? ",
-        answer: "Winter is Coming",
+        answer: ["Winter is Coming"],
         difficulty: "Easy"
     },{
         question: "Which character, also known as the Lightning Lord, gets continually resurrected by Thoros of Myr after he dies? ",
-        answer: "Beric Dondarrion",
+        answer: ["Beric Dondarrion", "Baric Dondarrion", "Beric Dondarion", "Baric Dondarion", "Beric", "Baric"],
         difficulty: "Hard"
     },{
         question: "What is the sigil of House Baratheon? ",
-        answer: "A Crowned Stag",
+        answer: ["A Crowned Stag", "Crowned Stag", "A Stag", "Stag"],
         difficulty: "Easy"
     },{
         question: "What is the name of Arya Stark\’s sword? ",
-        answer: "Needle",
+        answer: ["Needle", "The Needle"],
         difficulty: "Medium"
     },{
         question: "Grey Worm is the leader of which group? ",
-        answer: "The Unsullied",
+        answer: ["The Unsullied", "Unsullied"],
         difficulty: "Easy"
     },{
         question: "Who masterminded the plot to kill King Joffrey Baratheon? ",
-        answer: "Olenna Tyrell",
+        answer: ["Olenna Tyrell", "Lady Olenna Tyrell", "Lady Olenna", "Lady Tyrell", "Olenna"],
         difficulty: "Hard"
-    }
-];
-
-const highScores = [
-    {
-        playerName: "George RR Martin",
-        score: 18
-    },{
-        playerName: "Hardcore GOT fan",
-        score: 16
-    },{
-        playerName: "Rishi",
-        score: 15
-    },{
-        playerName: "Average GOT fan",
-        score: 13
     }
 ];
 
@@ -84,7 +68,9 @@ function questionPopper ({ question, answer, difficulty }) {
 
     const userAnswer = prompt(question);
     
-    if ( userAnswer.trim().toUpperCase() === answer.trim().toUpperCase()) {
+    const isAnswerCorrect = answer.some( item => item.trim().toUpperCase() === userAnswer.trim().toUpperCase());
+
+    if ( isAnswerCorrect ) {
         
         switch ( difficulty ) {
 
@@ -113,7 +99,7 @@ function questionPopper ({ question, answer, difficulty }) {
         
         console.log("Sorry, wrong answer.");
 
-        console.log(`The correct answer is: ${answer}`);
+        console.log(`The correct answer is: ${answer[1]}`);
 
         console.log(`Your current score is: ${currentScore}`);
     }
@@ -125,6 +111,22 @@ function questionPopper ({ question, answer, difficulty }) {
 console.log(`Your final score is: ${currentScore}`);
 
 console.log("-----------------------------------");
+
+const highScores = [
+    {
+        playerName: "George RR Martin",
+        score: 18
+    },{
+        playerName: "Hardcore GOT fan",
+        score: 16
+    },{
+        playerName: "Rishi",
+        score: 15
+    },{
+        playerName: "Average GOT fan",
+        score: 13
+    }
+];
 
 console.log(`HIGH SCORES: `);
 
