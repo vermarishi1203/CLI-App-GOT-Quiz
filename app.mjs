@@ -7,18 +7,18 @@ const prompt = promptSync({sigint: true});
 
 console.log("\n");
 
-const userName = prompt(chalk.blue("Hey GOT fan, What's your name? "));
+const userName = prompt(chalk.magentaBright("Hey GOT fan, What's your name? "));
 
-console.log(`Welcome to the quiz ${userName}!`);
+console.log(chalk.greenBright(`Welcome to the quiz ${userName}!`));
 
 console.log("-----------------------------------");
-console.log("RULES: ");
+console.log(chalk.bold.underline.yellowBright("RULES:"));
 console.log("-> This quiz has 10 questions");
 console.log("-> Out these 10 question, there are 4 easy, 4 medium and 2 hard questions");
 console.log("-> If you answer correctly, you will win points : 1 for easy, 2 for medium and 3 for hard questions.");
 console.log("-> The maximum possible score is 18 points.");
 console.log("-> Type your answer and press enter to submit.If the answer is two or more words, seperate the words using a single white space.");
-console.log("Have Fun!");
+console.log(chalk.bold.cyan("Have Fun!"));
 console.log("-----------------------------------");
 
 console.log("\n");
@@ -73,7 +73,7 @@ for (let i = 0; i < arrayOfQuestions.length ; i++ ) questionPopper( arrayOfQuest
 
 function questionPopper ({ question, answer, difficulty }) {
 
-    console.log(`Difficulty: ${difficulty}`);
+    console.log(chalk.yellow(`Difficulty: ${difficulty}`));
 
     const userAnswer = prompt(question);
 
@@ -99,25 +99,25 @@ function questionPopper ({ question, answer, difficulty }) {
                 currentScore++;
         };
 
-        console.log("You are right!");
+        console.log(chalk.greenBright("You are right!"));
         
-        console.log(`Your current score is: ${currentScore}`);
+        console.log(chalk.blueBright(`Your current score is: ${currentScore}`));
 
     }
     else {
         
-        console.log("Sorry, wrong answer.");
+        console.log(chalk.redBright("Sorry, wrong answer."));
 
-        console.log(`The correct answer is: ${answer[0]}`);
+        console.log(chalk.greenBright(`The correct answer is: ${answer[0]}`));
 
-        console.log(`Your current score is: ${currentScore}`);
+        console.log(chalk.blueBright(`Your current score is: ${currentScore}`));
     }
 
     console.log("\n");
 
 }
 
-console.log(`Your final score is: ${currentScore}`);
+console.log(chalk.bold.italic.greenBright(`Your final score is: ${currentScore}`));
 
 console.log("-----------------------------------");
 
@@ -137,18 +137,18 @@ const highScores = [
     }
 ];
 
-console.log(`HIGH SCORES: `);
+console.log(chalk.bold.underline.magentaBright(`HIGH SCORES:`));
 
 highScores.forEach(({playerName, score}) => {
     
-    console.log(`Player: ${playerName}`);
-    console.log(`Score: ${score}`);
+    console.log(chalk.cyan(`Player: ${playerName}`));
+    console.log(chalk.white(`Score: ${score}`));
 
     });
 
 console.log("-----------------------------------");
 
-console.log("If you want your name to be displayed in HIGH SCORES, take a screenshot of your score and send it to Rishi ;)");
+console.log(chalk.bgRed("If you want your name to be displayed in HIGH SCORES, take a screenshot of your score and send it to Rishi ;)"));
 
 console.log("\n");
 
