@@ -56,6 +56,22 @@ const arrayOfQuestions = [
     }
 ];
 
+const highScores = [
+    {
+        playerName: "George RR Martin",
+        score: 18
+    },{
+        playerName: "Hardcore GOT fan",
+        score: 16
+    },{
+        playerName: "Rishi",
+        score: 15
+    },{
+        playerName: "Average GOT fan",
+        score: 13
+    }
+];
+
 for (let i = 0; i < arrayOfQuestions.length ; i++ ) {
     
     questionPopper( arrayOfQuestions[i] );
@@ -107,4 +123,21 @@ function questionPopper ({ question, answer, difficulty }) {
 }
 
 console.log(`Your final score is: ${currentScore}`);
+
+console.log("-----------------------------------");
+
+console.log(`HIGH SCORES: `);
+
+highScores.forEach(({playerName, score}) => {
+    
+    console.log(`Player: ${playerName}`);
+    console.log(`Score: ${score}`);
+
+    });
+
+console.log("-----------------------------------");
+
+console.log("If you want your name to be displayed in HIGH SCORES, take a screenshot of your score and send it to Rishi ;)");
+
+console.log("\n");
 
