@@ -8,6 +8,16 @@ const userName = prompt("Hey GOT fan, What's your name? ");
 
 console.log(`Welcome to the quiz ${userName}!`);
 
+console.log("-----------------------------------");
+console.log("RULES: ");
+console.log("-> This quiz has 10 questions");
+console.log("-> Out these 10 question, there are 4 easy, 4 medium and 2 hard questions");
+console.log("-> If you answer correctly, you will win points : 1 for easy, 2 for medium and 3 for hard questions.");
+console.log("-> The maximum possible score is 18 points.");
+console.log("-> Type your answer and press enter to submit.If the answer is two or more words, seperate the words using a single white space.");
+console.log("Have Fun!");
+console.log("-----------------------------------");
+
 console.log("\n");
 
 let currentScore = 0;
