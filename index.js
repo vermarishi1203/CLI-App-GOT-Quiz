@@ -10,6 +10,8 @@ console.log(`Welcome to the quiz ${userName}!`);
 
 console.log("\n");
 
+let currentScore = 0;
+
 const arrayOfQuestions = [
     {
         question: "Who is the youngest of Ned Stark\’s children? ",
@@ -55,15 +57,24 @@ function questionPopper (question, answer) {
     const userAnswer = prompt(question);
 
     if ( userAnswer === answer) {
+        
+        currentScore++;
+
         console.log("You are right!");
+        
+        console.log(`Your current score is: ${currentScore}`);
+
     }
     else {
+        
         console.log("Sorry, wrong answer.");
+
+        console.log(`Your current score is: ${currentScore}`);
     }
 
     console.log("\n");
 
 }
 
-
+console.log(`Your final score is: ${currentScore}`);
 
